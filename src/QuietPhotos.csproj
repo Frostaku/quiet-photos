@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <AssemblyName>QuietPhotos</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>..\assets\icons\QuietPhotos.ico</ApplicationIcon>
+    <LangVersion>5</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup><EmbeddedResource Include="Theme.xaml" LogicalName="QuietPhotos.Theme.xaml" /></ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\assets\icons\QuietPhotos.ico" LogicalName="QuietPhotos.Icon.ico" />
+    <EmbeddedResource Include="..\assets\QuietPhotos.xaml" LogicalName="QuietPhotos.Icon.xaml" />
+  </ItemGroup>
+  <Target Name="BuildPortableDecoder" AfterTargets="Build">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\..\codecs\build-worker.ps1&quot; -OutputDirectory &quot;$(TargetDir)codecs&quot;" />
+  </Target>
+</Project>

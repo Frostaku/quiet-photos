@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <SolidColorBrush x:Key="Panel" Color="#202124"/>
+  <SolidColorBrush x:Key="Muted" Color="#9B9DA5"/>
+  <SolidColorBrush x:Key="Accent" Color="#9BC5FF"/>
+  <Style TargetType="TextBlock"><Setter Property="Foreground" Value="#EDEEF2"/><Setter Property="FontFamily" Value="Segoe UI"/></Style>
+  <Style TargetType="Button">
+    <Setter Property="Foreground" Value="#EDEEF2"/><Setter Property="Background" Value="Transparent"/><Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="FontFamily" Value="Segoe UI"/><Setter Property="FontSize" Value="13"/><Setter Property="Padding" Value="12,9"/>
+    <Setter Property="Margin" Value="2"/><Setter Property="Cursor" Value="Hand"/><Setter Property="MinHeight" Value="36"/>
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+      <Border x:Name="bg" Background="{TemplateBinding Background}" CornerRadius="6" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
+        <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      </Border>
+      <ControlTemplate.Triggers>
+        <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="bg" Property="Background" Value="#383A40"/></Trigger>
+        <Trigger Property="IsPressed" Value="True"><Setter TargetName="bg" Property="Background" Value="#454951"/></Trigger>
+        <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="bg" Property="BorderBrush" Value="#9BC5FF"/></Trigger>
+        <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.3"/></Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="ToolTip"><Setter Property="Background" Value="#303238"/><Setter Property="Foreground" Value="#F0F1F5"/><Setter Property="BorderBrush" Value="#4B4D55"/><Setter Property="Padding" Value="10,6"/></Style>
+  <Style TargetType="ContextMenu">
+    <Setter Property="Background" Value="#25262B"/><Setter Property="Foreground" Value="#ECEEF3"/><Setter Property="BorderBrush" Value="#45474F"/>
+    <Setter Property="BorderThickness" Value="1"/><Setter Property="Padding" Value="4"/>
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ContextMenu">
+      <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+        <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+          <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/>
+        </ScrollViewer>
+      </Border>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="MenuItem">
+    <Setter Property="Padding" Value="12,7"/><Setter Property="Foreground" Value="#ECEEF3"/><Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="MenuItem">
+      <Border x:Name="row" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="1" CornerRadius="3">
+        <Grid Margin="{TemplateBinding Padding}">
+          <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+          <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center"/>
+          <TextBlock Grid.Column="1" Text="{TemplateBinding InputGestureText}" Foreground="#AEB1BA" FontSize="12" Margin="28,0,0,0" VerticalAlignment="Center"/>
+        </Grid>
+      </Border>
+      <ControlTemplate.Triggers>
+        <Trigger Property="IsHighlighted" Value="True"><Setter TargetName="row" Property="Background" Value="#344354"/><Setter TargetName="row" Property="BorderBrush" Value="#587591"/></Trigger>
+        <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.4"/></Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator">
+    <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Separator"><Border Background="#45474F" Height="1" Margin="8,5"/></ControlTemplate></Setter.Value></Setter>
+  </Style>
+</ResourceDictionary>
