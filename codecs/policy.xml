@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policymap>
+  <policy domain="delegate" rights="none" pattern="*"/>
+  <policy domain="filter" rights="none" pattern="*"/>
+  <!-- HEIF/AVIF require internal blob staging. User paths are passed as streams,
+       SVG references are rejected, URL coders and indirect reads are disabled. -->
+  <policy domain="path" rights="none" pattern="@*"/>
+  <policy domain="coder" rights="none" pattern="*"/>
+  <policy domain="coder" rights="read" pattern="{JPEG,PNG,BMP,DIB,GIF,TIFF,WEBP,AVIF,HEIC,JXL,ICO,CUR,TGA,PCX,PPM,PGM,PBM,PNM,PAM,JP2,J2K,DDS,HDR,EXR,QOI,PSD,PSB,XCF,MSVG,DNG,CR2,CR3,NEF,ARW,RAF,ORF,RW2,PEF,SRW}"/>
+  <policy domain="coder" rights="read|write" pattern="PNG"/>
+  <!-- MSVG converts its parsed geometry through MVG internally. The managed
+       allowlist never accepts a user MVG file; SVG image/URL constructs fail. -->
+  <policy domain="coder" rights="read" pattern="MVG"/>
+  <policy domain="resource" name="memory" value="512MiB"/>
+  <policy domain="resource" name="map" value="0"/>
+  <policy domain="resource" name="disk" value="0"/>
+  <policy domain="resource" name="width" value="40KP"/>
+  <policy domain="resource" name="height" value="40KP"/>
+  <policy domain="resource" name="list-length" value="64"/>
+  <policy domain="resource" name="time" value="20"/>
+  <policy domain="resource" name="thread" value="2"/>
+</policymap>
