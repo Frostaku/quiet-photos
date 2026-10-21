@@ -1,0 +1,28 @@
+<DrawingImage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <GeometryDrawing Brush="Transparent" Geometry="M0,0 H256 V256 H0 Z"/>
+      <GeometryDrawing>
+        <GeometryDrawing.Brush><LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#254B70" Offset="0"/><GradientStop Color="#101E34" Offset="1"/></LinearGradientBrush></GeometryDrawing.Brush>
+        <GeometryDrawing.Geometry><RectangleGeometry Rect="16,16,224,224" RadiusX="48" RadiusY="48"/></GeometryDrawing.Geometry>
+      </GeometryDrawing>
+      <DrawingGroup>
+        <DrawingGroup.ClipGeometry><RectangleGeometry Rect="40,48,176,160" RadiusX="18" RadiusY="18"/></DrawingGroup.ClipGeometry>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush><LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#73C7D6" Offset="0"/><GradientStop Color="#C0E4DC" Offset="1"/></LinearGradientBrush></GeometryDrawing.Brush>
+          <GeometryDrawing.Geometry><RectangleGeometry Rect="40,48,176,160"/></GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFD48B"><GeometryDrawing.Geometry><EllipseGeometry Center="169,89" RadiusX="20" RadiusY="20"/></GeometryDrawing.Geometry></GeometryDrawing>
+        <GeometryDrawing Brush="#548B9E" Geometry="M40,164 L101,94 L166,164 L216,123 L216,208 L40,208 Z"/>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush><LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#319F9D" Offset="0"/><GradientStop Color="#126471" Offset="1"/></LinearGradientBrush></GeometryDrawing.Brush>
+          <GeometryDrawing.Geometry><PathGeometry Figures="M40,181 L94,140 L142,180 L216,132 L216,208 L40,208 Z"/></GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup>
+      <GeometryDrawing>
+        <GeometryDrawing.Pen><Pen Brush="#456B87" Thickness="1.5"/></GeometryDrawing.Pen>
+        <GeometryDrawing.Geometry><RectangleGeometry Rect="16.75,16.75,222.5,222.5" RadiusX="47" RadiusY="47"/></GeometryDrawing.Geometry>
+      </GeometryDrawing>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage>
